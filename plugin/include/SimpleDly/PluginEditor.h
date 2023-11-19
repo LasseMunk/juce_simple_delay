@@ -18,5 +18,12 @@ private:
     // access the processor object that created it.
     AudioPluginAudioProcessor& processorRef;
 
+    juce::Slider gainSlider, feedbackSlider, mixSlider;
+    juce::Label gainLabel, feedbackLabel, mixLabel;
+    // the attachment must be placed after the slider is created 
+    juce::AudioProcessorValueTreeState::SliderAttachment    gainSliderAttachment, 
+                                                            feedbackSliderAttachment, 
+                                                            mixSliderAttachment;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioPluginAudioProcessorEditor)
 };

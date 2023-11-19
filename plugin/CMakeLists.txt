@@ -119,6 +119,6 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 # This copies the VST3 file to myplugins folder on my desktop
 # VST_OUTPUT_NAME is a cmake variable I defined above.
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_artefacts/Debug/VST3/${VST_OUTPUT_NAME}.vst3/Contents/x86_64-win/${VST_OUTPUT_NAME}.vst3" "C:/Users/lm/Desktop/myplugin/${VST_OUTPUT_NAME}.vst3")
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_artefacts/Debug/VST3/${VST_OUTPUT_NAME}.vst3/Contents/x86_64-win/${VST_OUTPUT_NAME}.vst3" "C:/Users/lm/Desktop/myplugin/${VST_OUTPUT_NAME}.vst3")
 
 
