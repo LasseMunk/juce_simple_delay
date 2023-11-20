@@ -6,7 +6,7 @@
 class AudioPluginAudioProcessorEditor final : public juce::AudioProcessorEditor
 {
 public:
-    explicit AudioPluginAudioProcessorEditor (AudioPluginAudioProcessor&);
+    explicit AudioPluginAudioProcessorEditor (SimpleDelayAudioProcessor&);
     ~AudioPluginAudioProcessorEditor() override;
 
     //==============================================================================
@@ -16,7 +16,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    AudioPluginAudioProcessor& processorRef;
+    SimpleDelayAudioProcessor& processorRef;
 
     juce::Slider gainSlider, feedbackSlider, mixSlider;
     juce::Label gainLabel, feedbackLabel, mixLabel;

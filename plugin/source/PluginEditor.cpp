@@ -2,7 +2,7 @@
 #include "SimpleDly/PluginEditor.h"
 
 //==============================================================================
-AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor (AudioPluginAudioProcessor& p)
+AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor (SimpleDelayAudioProcessor& p)
     : AudioProcessorEditor (&p), processorRef (p),
     gainSliderAttachment (p.state, "GAIN", gainSlider), // attach the slider to the state
     feedbackSliderAttachment (p.state, "FEEDBACK", feedbackSlider),
