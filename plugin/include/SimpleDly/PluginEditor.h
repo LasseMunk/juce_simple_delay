@@ -18,10 +18,11 @@ private:
     // access the processor object that created it.
     SimpleDelayAudioProcessor& processorRef;
 
-    juce::Slider gainSlider, feedbackSlider, mixSlider;
+    juce::Slider gainSlider, timeSlider, feedbackSlider, mixSlider;
     juce::Label gainLabel, feedbackLabel, mixLabel;
     // the attachment must be placed after the slider is created 
     juce::AudioProcessorValueTreeState::SliderAttachment    gainSliderAttachment, 
+                                                            timeSliderAttachment,
                                                             feedbackSliderAttachment, 
                                                             mixSliderAttachment;
 

@@ -6,9 +6,10 @@ AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor (SimpleDelayAud
     : AudioProcessorEditor (&p), processorRef (p),
     gainSliderAttachment (p.state, "GAIN", gainSlider), // attach the slider to the state
     feedbackSliderAttachment (p.state, "FEEDBACK", feedbackSlider),
-    mixSliderAttachment (p.state, "MIX", mixSlider)
+    mixSliderAttachment (p.state, "MIX", mixSlider),
+    timeSliderAttachment (p.state, "TIME", timeSlider)
 {
-    for (auto* slider: { &gainSlider, &feedbackSlider, &mixSlider })
+    for (auto* slider: { &gainSlider, &timeSlider, &feedbackSlider, &mixSlider })
     {
         slider->setSliderStyle (juce::Slider::SliderStyle::Rotary);
         slider->setColour (juce::Slider::rotarySliderFillColourId, juce::Colours::whitesmoke);
@@ -56,6 +57,8 @@ void AudioPluginAudioProcessorEditor::resized()
 
     juce::Rectangle<int> knobsBounds = bounds.removeFromRight ( getWidth() / 2 );
     juce::Rectangle<int> feedbackBounds = knobsBounds.removeFromLeft (knobsBounds.getWidth() / 2);
+    juce::Rectangle<int> timeBounds = knobsBounds.removeFromLeft (knobsBounds.getWidth() / 3);
     feedbackSlider.setBounds (feedbackBounds.reduced (margin));
+    timeSlider.setBounds (timeBounds.reduced (margin));
     mixSlider.setBounds (knobsBounds.reduced (margin));
 }

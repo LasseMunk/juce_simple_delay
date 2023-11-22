@@ -25,7 +25,7 @@ juce_add_plugin(${PROJECT_NAME}
     PLUGIN_MANUFACTURER_CODE LMNK               # A four-character manufacturer id with at least one upper-case character
     PLUGIN_CODE Dly1                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
-    FORMATS VST3                   # The formats to build. Other valid formats are: AAX AU Unity Standalone VST AU AUv3
+    FORMATS VST3 Standalone                  # The formats to build. Other valid formats are: AAX AU Unity Standalone VST AU AUv3
     PRODUCT_NAME ${VST_OUTPUT_NAME})        # The name of the final executable, which can differ from the target name
 
 
@@ -120,5 +120,4 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 # This copies the VST3 file to myplugins folder on my desktop
 # VST_OUTPUT_NAME is a cmake variable I defined above.
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_artefacts/Debug/VST3/${VST_OUTPUT_NAME}.vst3/Contents/x86_64-win/${VST_OUTPUT_NAME}.vst3" "C:/Users/lm/Desktop/myplugin/${VST_OUTPUT_NAME}.vst3")
-
 

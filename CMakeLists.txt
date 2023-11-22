@@ -47,3 +47,5 @@ endif()
 
 # Adds all the targets configured in the "plugin" folder.
 add_subdirectory(plugin)
+
+set(CMAKE_BUILD_TYPE Debug) 

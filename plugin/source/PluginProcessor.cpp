@@ -18,7 +18,8 @@ SimpleDelayAudioProcessor::SimpleDelayAudioProcessor()
                        , state (*this, nullptr, "STATE", {
     std::make_unique<juce::AudioParameterFloat>("GAIN",     "Gain",     0.0f, 1.0f, 1.0f),
     std::make_unique<juce::AudioParameterFloat>("FEEDBACK", "Feedback", 0.0f, 1.0f, 0.35f),
-    std::make_unique<juce::AudioParameterFloat>("MIX",      "Dry/Wet",  0.0f, 1.0f, 0.5f)
+    std::make_unique<juce::AudioParameterFloat>("MIX",      "Dry/Wet",  0.0f, 1.0f, 0.5f),
+    std::make_unique<juce::AudioParameterFloat>("TIME",     "Time",     0.0f, 1.0f, 0.5f)
 })
 {
     // constructor start
